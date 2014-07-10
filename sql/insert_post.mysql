@@ -1,0 +1,6 @@
+INSERT INTO POST
+VALUES
+( ''
+, (SELECT MEMBER_ID FROM MEMBER WHERE EMAIL = $email_address)
+, UTC_DATE()
+, $sub_title);

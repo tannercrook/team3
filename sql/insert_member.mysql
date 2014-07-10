@@ -1,0 +1,4 @@
+-- Insert a new member
+
+INSERT INTO MEMBER
+VALUES('','$email_address','$first_name','$last_name','$password');
