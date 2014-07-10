@@ -8,3 +8,4 @@ If you can edit this file, please write your name into the list of people in the
 Group Members
 ==============
 Tanner Crook
+Steve Pippen
