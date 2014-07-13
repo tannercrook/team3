@@ -1,0 +1,35 @@
+/* ths is one that i took directly for th example and tried to implement and pull apart */
+--small wrapper
+package hello;
+import org.hibernate.*;
+import org.hibernate.cfg.*;
+import test.*;
+import test.animals.Dog;
+public class HibernateUtil {
+private static final SessionFactory sessionFactory;
+static {
+try {
+sessionFactory = new AnnotationConfiguration().buildSessionFactory();
+} catch (Throwable ex) {
+// Log exception!
+throw new ExceptionInInitializerError(ex);
+}
+}
+public static Session getSession()
+throws HibernateException {
+return sessionFactory.openSession();
+}
+}
+-- package and classes
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+<mapping package="test.animals"/>
+<mapping class="test.Flight"/>
+<mapping class="test.Sky"/>
+<mapping class="test.Person"/>
+<mapping class="test.animals.Dog"/>
+</session-factory>
+</hibernate-configuration>
